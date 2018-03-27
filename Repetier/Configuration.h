@@ -46,14 +46,14 @@
 // ################ END MANUAL SETTINGS ##########################
 
 #undef FAN_PIN
-#define FAN_PIN 6
+#define FAN_PIN 9
 #undef FAN2_PIN
-    #define FAN2_PIN -1
+    #define FAN2_PIN 11
 #undef FAN_BOARD_PIN
 #define FAN_BOARD_PIN -1
 #define BOARD_FAN_SPEED 255
 #define BOARD_FAN_MIN_SPEED 32
-#define FAN_THERMO_PIN 8
+#define FAN_THERMO_PIN 6
 #define FAN_THERMO_MIN_PWM 128
 #define FAN_THERMO_MAX_PWM 255
 #define FAN_THERMO_MIN_TEMP 45
@@ -119,7 +119,7 @@
 #define EXT0_WAIT_RETRACT_UNITS 0
 #define EXT0_SELECT_COMMANDS ""
 #define EXT0_DESELECT_COMMANDS ""
-#define EXT0_EXTRUDER_COOLER_PIN 8
+#define EXT0_EXTRUDER_COOLER_PIN 6
 #define EXT0_EXTRUDER_COOLER_SPEED 255
 #define EXT0_DECOUPLE_TEST_PERIOD 12000
 #define EXT0_JAM_PIN -1
@@ -173,7 +173,7 @@
 #define SKIP_M190_IF_WITHIN 3
 #define HEATED_BED_SENSOR_TYPE 14
 #define HEATED_BED_SENSOR_PIN TEMP_1_PIN
-#define HEATED_BED_HEATER_PIN 9
+#define HEATED_BED_HEATER_PIN 8
 #define HEATED_BED_SET_INTERVAL 500
 #define HEATED_BED_HEAT_MANAGER 2
 #define HEATED_BED_PID_INTEGRAL_DRIVE_MAX 255
@@ -646,7 +646,7 @@ Values must be in range 1..255
             "waitRetractUnits": 0,
             "waitRetract": 0,
             "stepsPerMM": 950,
-            "coolerPin": 8,
+            "coolerPin": 6,
             "coolerSpeed": 255,
             "selectCommands": "",
             "deselectCommands": "",
@@ -852,7 +852,7 @@ Values must be in range 1..255
     "maxBedTemperature": 130,
     "bedSensorType": 14,
     "bedSensorPin": "TEMP_1_PIN",
-    "bedHeaterPin": 9,
+    "bedHeaterPin": 8,
     "bedHeatManager": 2,
     "bedPreheat": 60,
     "bedUpdateInterval": 500,
@@ -918,10 +918,10 @@ Values must be in range 1..255
     "forceChecksum": "0",
     "sdExtendedDir": "1",
     "featureFanControl": "1",
-    "fanPin": 6,
+    "fanPin": 9,
     "featureFan2Control": "1",
-    "fan2Pin": -1,
-    "fanThermoPin": 8,
+    "fan2Pin": 11,
+    "fanThermoPin": 6,
     "fanThermoMinPWM": 128,
     "fanThermoMaxPWM": 255,
     "fanThermoMinTemp": 45,
