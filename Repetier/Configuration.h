@@ -70,8 +70,8 @@
 #define MIXING_EXTRUDER 0
 
 #define DRIVE_SYSTEM 1
-#define XAXIS_STEPS_PER_MM 80
-#define YAXIS_STEPS_PER_MM 80
+#define XAXIS_STEPS_PER_MM 160
+#define YAXIS_STEPS_PER_MM 160
 #define ZAXIS_STEPS_PER_MM 400
 #define EXTRUDER_FAN_COOL_TEMP 50
 #define PDM_FOR_EXTRUDER 0
@@ -340,6 +340,9 @@ It also can add a delay to wait for spindle to run on full speed.
 #define X_MIN_POS 0
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
+#define PARK_POSITION_X 0
+#define PARK_POSITION_Y 10
+#define PARK_POSITION_Z_RAISE 10
 
 
 #define DISTORTION_CORRECTION 0
@@ -379,8 +382,8 @@ It also can add a delay to wait for spindle to run on full speed.
 #define HOMING_FEEDRATE_X 70
 #define HOMING_FEEDRATE_Y 70
 #define HOMING_FEEDRATE_Z 40
-#define HOMING_ORDER HOME_ORDER_ZXY
-#define ZHOME_PRE_RAISE 0
+#define HOMING_ORDER HOME_ORDER_XYZ
+#define ZHOME_PRE_RAISE 2
 #define ZHOME_PRE_RAISE_DISTANCE 10
 #define RAISE_Z_ON_TOOLCHANGE 0
 #define ZHOME_MIN_TEMPERATURE 0
@@ -393,20 +396,20 @@ It also can add a delay to wait for spindle to run on full speed.
 #define Y_BACKLASH 0
 #define Z_BACKLASH 0
 #define RAMP_ACCELERATION 1
-#define STEPPER_HIGH_DELAY 0
+#define STEPPER_HIGH_DELAY 2
 #define DIRECTION_DELAY 0
 #define STEP_DOUBLER_FREQUENCY 80000
-#define ALLOW_QUADSTEPPING 1
+#define ALLOW_QUADSTEPPING 0
 #define DOUBLE_STEP_DELAY 0 // time in microseconds
-#define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_X 2000
-#define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_Y 1500
+#define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_X 1200
+#define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_Y 1000
 #define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_Z 100
-#define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_X 3000
-#define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_Y 2000
+#define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_X 1500
+#define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_Y 1200
 #define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_Z 100
 #define INTERPOLATE_ACCELERATION_WITH_Z 0
 #define ACCELERATION_FACTOR_TOP 100
-#define MAX_JERK 20
+#define MAX_JERK 25
 #define MAX_ZJERK 0.3
 #define PRINTLINE_CACHE_SIZE 16
 #define MOVE_CACHE_LOW 10
@@ -543,7 +546,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define FEATURE_CHECKSUM_FORCED 0
 #define FEATURE_FAN_CONTROL 1
 #define FEATURE_FAN2_CONTROL 1
-#define FEATURE_CONTROLLER 2
+#define FEATURE_CONTROLLER 11
 #define ADC_KEYPAD_PIN -1
 #define LANGUAGE_EN_ACTIVE 1
 #define LANGUAGE_DE_ACTIVE 0
@@ -557,14 +560,14 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define LANGUAGE_CZ_ACTIVE 0
 #define LANGUAGE_PL_ACTIVE 0
 #define LANGUAGE_TR_ACTIVE 0
-#define UI_PRINTER_NAME "HACKED RAMPS4DUE"
+#define UI_PRINTER_NAME "RAMPS4DUE"
 #define UI_PRINTER_COMPANY "DIY"
-#define UI_PAGES_DURATION 4000
+#define UI_PAGES_DURATION 2000
 #define UI_SPEEDDEPENDENT_POSITIONING 0
 #define UI_DISABLE_AUTO_PAGESWITCH 1
 #define UI_AUTORETURN_TO_MENU_AFTER 30000
 #define FEATURE_UI_KEYS 0
-#define UI_ENCODER_SPEED 1
+#define UI_ENCODER_SPEED 2
 #define UI_REVERSE_ENCODER 0
 #define UI_KEY_BOUNCETIME 10
 #define UI_KEY_FIRST_REPEAT 500
@@ -584,10 +587,10 @@ Values must be in range 1..255
 #define BEEPER_SHORT_SEQUENCE 2,2
 #define BEEPER_LONG_SEQUENCE 8,8
 #define UI_SET_MIN_HEATED_BED_TEMP  30
-#define UI_SET_MAX_HEATED_BED_TEMP 120
+#define UI_SET_MAX_HEATED_BED_TEMP 130
 #define UI_SET_MIN_EXTRUDER_TEMP   170
-#define UI_SET_MAX_EXTRUDER_TEMP   260
-#define UI_SET_EXTRUDER_FEEDRATE 2
+#define UI_SET_MAX_EXTRUDER_TEMP   300
+#define UI_SET_EXTRUDER_FEEDRATE 10
 #define UI_SET_EXTRUDER_RETRACT_DISTANCE 3
 
 
@@ -606,8 +609,8 @@ Values must be in range 1..255
     "baudrate": 115200,
     "bluetoothSerial": -1,
     "bluetoothBaudrate": 115200,
-    "xStepsPerMM": 80,
-    "yStepsPerMM": 80,
+    "xStepsPerMM": 160,
+    "yStepsPerMM": 160,
     "zStepsPerMM": 400,
     "xInvert": 0,
     "x2Invert": 0,
@@ -693,12 +696,12 @@ Values must be in range 1..255
     "driveSystem": 1,
     "xMaxSpeed": 2000,
     "xHomingSpeed": 70,
-    "xTravelAcceleration": 3000,
-    "xPrintAcceleration": 2000,
+    "xTravelAcceleration": 1500,
+    "xPrintAcceleration": 1200,
     "yMaxSpeed": 2000,
     "yHomingSpeed": 70,
-    "yTravelAcceleration": 2000,
-    "yPrintAcceleration": 1500,
+    "yTravelAcceleration": 1200,
+    "yPrintAcceleration": 1000,
     "zMaxSpeed": 200,
     "zHomingSpeed": 40,
     "zTravelAcceleration": 100,
@@ -763,12 +766,12 @@ Values must be in range 1..255
     "deltaYOffsetSteps": 0,
     "deltaZOffsetSteps": 0,
     "deltaSegmentsPerLine": 20,
-    "stepperHighDelay": 0,
+    "stepperHighDelay": 2,
     "directionDelay": 0,
     "stepDoublerFrequency": 80000,
-    "allowQuadstepping": "1",
+    "allowQuadstepping": "0",
     "doubleStepDelay": 0,
-    "maxJerk": 20,
+    "maxJerk": 25,
     "maxZJerk": 0.3,
     "moveCacheSize": 16,
     "moveCacheLow": 10,
@@ -826,16 +829,16 @@ Values must be in range 1..255
     "hasHeatedBed": "1",
     "enableZProbing": "0",
     "extrudeMaxLength": 160,
-    "homeOrder": "HOME_ORDER_ZXY",
-    "featureController": 2,
-    "uiPrinterName": "HACKED RAMPS4DUE",
+    "homeOrder": "HOME_ORDER_XYZ",
+    "featureController": 11,
+    "uiPrinterName": "RAMPS4DUE",
     "uiPrinterCompany": "DIY",
-    "uiPagesDuration": 4000,
+    "uiPagesDuration": 2000,
     "uiHeadline": "",
     "uiDisablePageswitch": "1",
     "uiAutoReturnAfter": 30000,
     "featureKeys": "0",
-    "uiEncoderSpeed": 1,
+    "uiEncoderSpeed": 2,
     "uiReverseEncoder": "0",
     "uiKeyBouncetime": 10,
     "uiKeyFirstRepeat": 500,
@@ -843,10 +846,10 @@ Values must be in range 1..255
     "uiKeyMinRepeat": 50,
     "featureBeeper": "1",
     "uiMinHeatedBed": 30,
-    "uiMaxHeatedBed": 120,
+    "uiMaxHeatedBed": 130,
     "uiMinEtxruderTemp": 170,
-    "uiMaxExtruderTemp": 260,
-    "uiExtruderFeedrate": 2,
+    "uiMaxExtruderTemp": 300,
+    "uiExtruderFeedrate": 10,
     "uiExtruderRetractDistance": 3,
     "uiSpeeddependentPositioning": "0",
     "maxBedTemperature": 130,
@@ -1210,7 +1213,7 @@ Values must be in range 1..255
     "boardFanMinSpeed": 32,
     "doorPin": -1,
     "doorEndstop": 1,
-    "zhomePreRaise": 0,
+    "zhomePreRaise": 2,
     "zhomePreRaiseDistance": 10,
     "dualXResolution": "0",
     "x2axisStepsPerMM": 100,
@@ -1249,6 +1252,9 @@ Values must be in range 1..255
     "microstepE0": 16,
     "microstepE1": 16,
     "microstepE2": 16,
+    "parkPosX": 0,
+    "parkPosY": 0,
+    "parkPosZ": 10,
     "hasMAX6675": false,
     "hasMAX31855": false,
     "hasGeneric1": false,
@@ -1258,7 +1264,7 @@ Values must be in range 1..255
     "hasUser1": false,
     "hasUser2": false,
     "numExtruder": 1,
-    "version": 100,
+    "version": 100.2,
     "primaryPortName": "SerialUSB"
 }
 ========== End configuration string ==========
